@@ -107,63 +107,57 @@ class PVcamMeasure(Measurement):
         focus on data acquisition.
         """
         self.cam.read_from_hardware()
+
+        if self.cam.settings['acquisition_mode'] == 'Continuous':
+            """
+            If mode is Continuous, acquire frames indefinitely. No save in h5 is permormed 
+            """
+            
+            self.cam.cam.acq_start() 
+            while not self.interrupt_measurement_called:
+                self.image = self.cam.cam.get_nparray()['pixel_data'] 
+                if self.interrupt_measurement_called:
+                    break
+            
+                
         
-        try:
-            
-            
-            if self.cam.settings['acquisition_mode'] == 'Continuous':
-                """
-                If mode is Continuous, acquire frames indefinitely. No save in h5 is permormed 
-                """
+        
+        elif self.cam.settings['acquisition_mode'] == 'MultiFrame':
+            """
+            If mode is Multiframe, acquire Nframes frames and eventually save them in h5 
+            """
+            self.cam.read_from_hardware()
+            number_frames  = self.cam.number_frames.val
+            first_frame_acquired = False
+            self.cam.cam.set_framenum(number_frames)
                 
-                self.cam.cam.acq_start() 
-                while not self.interrupt_measurement_called:
-                    self.image = self.cam.cam.get_nparray()['pixel_data'] 
-                    if self.interrupt_measurement_called:
-                        break
-                
-                 
-            
-            
-            elif self.cam.settings['acquisition_mode'] == 'MultiFrame':
+            self.cam.cam.acq_start() #exposure time already changed in the hardware
+            """Alternative:
+                self.cam.cam.acq_start_seq(num_frames = number_frames)
+                #just to set a non-circular buffer, but the frame acquisition is the same with poll_frame                   
+                #in this case, uncomment the function acq_start_seq in Device
                 """
-                If mode is Multiframe, acquire Nframes frames and eventually save them in h5 
-                """
-                self.cam.read_from_hardware()
-                number_frames  = self.cam.number_frames.val
-                first_frame_acquired = False
-                self.cam.cam.set_framenum(number_frames)
-                 
-                self.cam.cam.acq_start() #exposure time already changed in the hardware
-                """Alternative:
-                    self.cam.cam.acq_start_seq(num_frames = number_frames)
-                    #just to set a non-circular buffer, but the frame acquisition is the same with poll_frame                   
-                    #in this case, uncomment the function acq_start_seq in Device
-                    """
+            
+            for frame_idx in range(number_frames):
+                                
+                if self.settings['save_h5']:
+                    if not first_frame_acquired:
+                        self.create_h5_file()
+                        first_frame_acquired = True
+
+                    self.img= self.cam.cam.poll_frame()    
+                    self.image_h5[frame_idx,:,:] = self.img
+                    self.h5file.flush()
                 
-                for frame_idx in range(number_frames):
-                                    
-                    if self.settings['save_h5']:
-                        if not first_frame_acquired:
-                            self.create_h5_file()
-                            first_frame_acquired = True
+                if self.interrupt_measurement_called:
+                    break
 
-                        self.img= self.cam.cam.poll_frame()    
-                        self.image_h5[frame_idx,:,:] = self.img
-                        self.h5file.flush()
-                    
-                    if self.interrupt_measurement_called:
-                        break
 
-                                             
-
-        finally:            
-            
-            self.cam.cam.acq_stop()
-            
-            if self.settings['save_h5'] and hasattr(self, 'h5file'):
-                # make sure to close the data file
-                self.h5file.close() 
+        self.cam.cam.acq_stop()
+        
+        if self.settings['save_h5'] and hasattr(self, 'h5file'):
+            # make sure to close the data file
+            self.h5file.close() 
          
 
 
