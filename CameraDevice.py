@@ -228,13 +228,13 @@ if __name__ == '__main__':
         #print('Sensor size is:',(camera.get_properties(const.PARAM_SER_SIZE),camera.get_properties(const.PARAM_PAR_SIZE)))
         print('Sensor size is (width, height):',(camera.get_width(),camera.get_height()))
 
-        # #Acquisition multiple frames
-        # camera.acq_start()
-        # for i in range(10):
-        #     image=camera.get_nparray()
-        #     plt.figure()
-        #     plt.imshow(image['pixel_data'], cmap='gray')
-        # plt.show()
+        #Acquisition multiple frames
+        camera.acq_start()
+        for i in range(10):
+            image=camera.get_nparray()
+            plt.figure()
+            plt.imshow(image['pixel_data'], cmap='gray')
+        plt.show()
         camera.acq_stop()
 
         #Setting functions 
@@ -276,5 +276,5 @@ if __name__ == '__main__':
     finally:
         camera.close()
         print('Camera closed')
-        pvc.uninit_pvcam() #uninitialize the PVCAM library
+        # pvc.uninit_pvcam() #uninitialize the PVCAM library
     
