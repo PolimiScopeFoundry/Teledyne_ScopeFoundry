@@ -276,5 +276,5 @@ if __name__ == '__main__':
     finally:
         camera.close()
         print('Camera closed')
-        #pvc.uninit_pvcam() #uninitialize the PVCAM library
+        pvc.uninit_pvcam() #uninitialize the PVCAM library
     

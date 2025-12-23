@@ -10,7 +10,7 @@ from ScopeFoundry import HardwareComponent
 from CameraDevice import PVcamDevice
 
 class PVcamHW(HardwareComponent):
-    name = 'PVcamhw'
+    name = 'PVcamHW'
     
     def setup(self):
         # create Settings (aka logged quantities)    

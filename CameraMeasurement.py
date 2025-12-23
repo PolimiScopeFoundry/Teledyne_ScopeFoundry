@@ -37,7 +37,7 @@ class PVcamMeasure(Measurement):
         self.settings.New('level_min', dtype=int, initial=60)
         self.settings.New('level_max', dtype=int, initial=4000)
         
-        self.cam = self.app.hardware['PVcamhw'] 
+        self.cam = self.app.hardware['PVcamHW'] 
         
     def setup_figure(self):
         """
