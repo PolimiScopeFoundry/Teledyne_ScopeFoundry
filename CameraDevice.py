@@ -170,10 +170,12 @@ class PVcamDevice(object):
         #Returns a 2D np.array containing the pixel data from the captured frame.
         #self.cam.get_frame() is the built-in function
         #self.cam.start_seq(num_frames=1) #I don't need this if I always use acq_start before
-        frame, fps, frame_count = self.cam.poll_frame() #returns a dictionary
-        #self.finish() #is it necessary? Finishing acquisition may be done in the main script with acq_stop
-        #return frame['pixel_data']
-        return frame
+        frame, fps, frame_count = self.cam.poll_frame() 
+        #Note: frame is a dictionary; to access data use frame['pixel_data']
+        #Note: function get_frame() returns a 2D numpy array of pixel data from a single snap image. With poll_frame()
+        #we can retrieve all the frames acquired in a sequence from the oldest to the newest one and each retrieved
+        #frame will be popped off the camera buffer. 
+        return frame['pixel_data']
     
     def acq_stop(self):
         # Ends a previously started live or sequence acquisition.
@@ -218,7 +220,7 @@ if __name__ == '__main__':
         camera.acq_start()
         image=camera.get_nparray()
         plt.figure()
-        plt.imshow(image['pixel_data'], cmap='gray')
+        plt.imshow(image, cmap='gray')
         plt.show()
         print('Acquisition mode is:', camera.get_trigger_mode())
         print('Exposure time [ms] is:',camera.get_exposure())
@@ -233,7 +235,7 @@ if __name__ == '__main__':
         # for i in range(10):
         #     image=camera.get_nparray()
         #     plt.figure()
-        #     plt.imshow(image['pixel_data'], cmap='gray')
+        #     plt.imshow(image, cmap='gray')
         # plt.show()
         camera.acq_stop()
 
@@ -262,7 +264,7 @@ if __name__ == '__main__':
         camera.acq_start()
         image=camera.get_nparray()
         plt.figure()    
-        plt.imshow(image['pixel_data'], cmap='gray')
+        plt.imshow(image, cmap='gray')
         plt.show()
 
         #Reading parameters

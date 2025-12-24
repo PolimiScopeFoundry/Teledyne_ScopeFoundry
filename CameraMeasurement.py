@@ -115,7 +115,7 @@ class PVcamMeasure(Measurement):
             
             self.cam.cam.acq_start() 
             while not self.interrupt_measurement_called:
-                self.image = self.cam.cam.get_nparray()['pixel_data'] 
+                self.image = self.cam.cam.get_nparray() 
                 if self.interrupt_measurement_called:
                     break
             
@@ -145,7 +145,7 @@ class PVcamMeasure(Measurement):
                         self.create_h5_file()
                         first_frame_acquired = True
                         
-                    self.img= self.cam.cam.get_nparray()['pixel_data']    
+                    self.img= self.cam.cam.get_nparray()   
                     self.image_h5[frame_idx,:,:] = self.img
                     self.h5file.flush()
                 
