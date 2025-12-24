@@ -39,10 +39,6 @@ class PVcamHW(HardwareComponent):
                                                   spinbox_step = 4, spinbox_decimals = 0, initial = 2200, 
                                                   vmin = 4, vmax = 3200, reread_from_hardware_after_write = True)
         
-        #self.submode = self.add_logged_quantity("subarray_mode", dtype=str, si = False, ro = True, 
-        #                                        initial = 'ON')
-        #it doesn't exist for this camera...
-        
         self.subarrayh_pos = self.settings.New('subarrayh_pos', dtype = float, si = False, ro = 0,
                                                       spinbox_step = 4, spinbox_decimals = 0, initial = 0, 
                                                       vmin = 0, vmax = 3196, reread_from_hardware_after_write = True,
@@ -63,13 +59,10 @@ class PVcamHW(HardwareComponent):
         self.exposure_time = self.settings.New(name='exposure_time', initial=20, vmax =3600000,
                                                vmin = 0, spinbox_step = 0.01,dtype=int, ro=False, unit='ms',
                                                reread_from_hardware_after_write=True)
-        self.acquisition_mode = self.settings.New(name='acquisition_mode', dtype=str,
-                                                  choices=['Continuous', 'MultiFrame'], initial = 'Continuous', ro=False, reread_from_hardware_after_write = True)
-        
-        #self.trsource = self.add_logged_quantity('trigger_source', dtype=str, si=False, ro=0, 
-        #                                    choices = ["internal", "external"], initial = 'internal', reread_from_hardware_after_write = True)
+        # self.acquisition_mode = self.settings.New(name='acquisition_mode', dtype=str,
+        #                                           choices=['Continuous', 'MultiFrame'], initial = 'Continuous', ro=False, reread_from_hardware_after_write = True)  #Uncomment to choose acquisition mode
         self.trmode = self.add_logged_quantity('trigger_mode', dtype=str, si=False, ro=0, 
-                                       choices = ["normal", "start"], initial = 'normal', reread_from_hardware_after_write = True)
+                                       choices = ['Internal Trigger', 'Edge Trigger', 'Trigger First', 'Software Trigger Edge', 'Software Trigger First'], initial = 'Internal Trigger', reread_from_hardware_after_write = True)
 
     def connect(self):
         # create an instance of the Device
@@ -87,7 +80,6 @@ class PVcamHW(HardwareComponent):
         self.gain.hardware_read_func = self.cam.get_gain
         self.binning.hardware_read_func = self.cam.get_binning      
         self.trmode.hardware_read_func = self.cam.get_trigger_mode    
-        # self.trsource.hardware_read_func = self.cam.getTriggerSource  
         #self.subarrayh.hardware_read_func = self.cam.getSubarrayH
         #self.subarrayv.hardware_read_func = self.cam.getSubarrayV
         #self.subarrayh_pos.hardware_read_func = self.cam.getSubarrayHpos
@@ -106,7 +98,6 @@ class PVcamHW(HardwareComponent):
         self.subarrayv_pos.hardware_set_func = self.cam.setSubarrayVpos
         #self.roi.hardware_set_func = self.cam.set_roi
         self.trmode.hardware_set_func = self.cam.set_trigger_mode
-        #self.trsource.hardware_set_func = self.hamamatsu.setTriggerSource
         self.read_from_hardware()
 
         
