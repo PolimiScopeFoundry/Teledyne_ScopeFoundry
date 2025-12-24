@@ -29,10 +29,7 @@ class PVcamDevice(object):
         self.cam.open() 
         self.cam.meta_data_enabled = True
         self.cam.binning=(1,1) #a tuple for the binning (x, y)
-        self.cam.exp_mode= 'Internal Trigger' #'Internal Trigger', 'Edge Trigger', 'Trigger First', 'Software Trigger Edge', 'Software Trigger First'
-        self.cam.exp_time= 20 #exposure time in ms
-        self.cam.number_frames=1
-        
+        self.cam.exp_time= 20 #exposure time in ms 
         self.cam.readout_port=0
         self.cam.speed_table_index=0
         self.cam.gain= 1 #PMUSBCam00 only supports gain indicies from 1 - 2.

@@ -18,8 +18,6 @@ class PVcamHW(HardwareComponent):
         self.temperature = self.settings.New(name='temperature', dtype=float, ro=True, unit='°C')
         self.temperature_setpoint = self.settings.New(name='temperature_setpoint', dtype=float, 
                                                       ro=True, unit='°C')
-        self.number_frames = self.add_logged_quantity("number_frames", dtype = int, si = False, ro = 0, 
-                                                initial = 200, vmin = 1, reread_from_hardware_after_write = True)
         self.image_width = self.settings.New(name='image_width', dtype=int, ro=True)
         self.image_height = self.settings.New(name='image_height', dtype=int, ro=True)
         # self.binning_x=self.settings.New(name='binning_x', dtype=int, ro=False, choices = [1, 2, 4],
