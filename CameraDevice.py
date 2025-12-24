@@ -90,6 +90,7 @@ class PVcamDevice(object):
         #h0, v0 are the coordinates of the top/bottom left corner of the ROI
         #width, height are the dimensions of the ROI
         self.cam.meta_data_enabled = True
+        self.cam.reset_rois() #reset ROI to full sensor size before setting a new one
         self.cam.set_roi(h0, v0, width, height)  
         self.cam.roi = (h0, v0, width, height)
     
@@ -121,10 +122,6 @@ class PVcamDevice(object):
         height=self.cam.roi[3]
         self.cam.set_roi(h0, v0, width, height)  
 
-
-    def reset_roi(self):
-        #reset the ROI to the full sensor size
-        self.cam.reset_rois()
 
     def get_roi(self):
         return(self.cam.roi)
@@ -175,6 +172,9 @@ class PVcamDevice(object):
         #Note: function get_frame() returns a 2D numpy array of pixel data from a single snap image. With poll_frame()
         #we can retrieve all the frames acquired in a sequence from the oldest to the newest one and each retrieved
         #frame will be popped off the camera buffer. 
+        #Note: To improve performance nd decrease memory usage, the argument copyData (bool) can be set to False (default
+        #us True): returned numpy frames will contain a copy of image data. Without this copy, the numpy 
+        #frame image data will point directly to the underlying frame buffer used by PVCAM.Be casreful when 
         return frame['pixel_data']
     
     def acq_stop(self):
