@@ -30,7 +30,7 @@ class PVcamDevice(object):
         self.cam.meta_data_enabled = True
         self.cam.binning=(1,1) #a tuple for the binning (x, y)
         self.cam.exp_mode= 'Internal Trigger' #'Internal Trigger', 'Edge Trigger', 'Trigger First', 'Software Trigger Edge', 'Software Trigger First'
-        self.cam.exp_time= 1
+        self.cam.exp_time= 20 #exposure time in ms
         self.cam.number_frames=1
         
         self.cam.readout_port=0
@@ -162,9 +162,9 @@ class PVcamDevice(object):
         #not necessary to specify the exposure time since it has been set
 
 
-    #def acq_start_seq(self, number_frames):
-    #     self.cam.start_seq(num_frames=number_frames)
-    # non-circular buffer acquisition.
+    def acq_start_seq(self, number_frames):
+        self.cam.start_seq(num_frames=number_frames) #non-circular buffer acquisition.
+           
            
     def get_nparray(self):
         #Returns a 2D np.array containing the pixel data from the captured frame.
@@ -228,13 +228,13 @@ if __name__ == '__main__':
         #print('Sensor size is:',(camera.get_properties(const.PARAM_SER_SIZE),camera.get_properties(const.PARAM_PAR_SIZE)))
         print('Sensor size is (width, height):',(camera.get_width(),camera.get_height()))
 
-        #Acquisition multiple frames
-        camera.acq_start()
-        for i in range(10):
-            image=camera.get_nparray()
-            plt.figure()
-            plt.imshow(image['pixel_data'], cmap='gray')
-        plt.show()
+        # #Acquisition multiple frames
+        # camera.acq_start()
+        # for i in range(10):
+        #     image=camera.get_nparray()
+        #     plt.figure()
+        #     plt.imshow(image['pixel_data'], cmap='gray')
+        # plt.show()
         camera.acq_stop()
 
         #Setting functions 
@@ -276,5 +276,5 @@ if __name__ == '__main__':
     finally:
         camera.close()
         print('Camera closed')
-        # pvc.uninit_pvcam() #uninitialize the PVCAM library
+        #pvc.uninit_pvcam() #uninitialize the PVCAM library
     

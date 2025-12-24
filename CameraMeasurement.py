@@ -144,8 +144,8 @@ class PVcamMeasure(Measurement):
                     if not first_frame_acquired:
                         self.create_h5_file()
                         first_frame_acquired = True
-
-                    self.img= self.cam.cam.poll_frame()    
+                        
+                    self.img= self.cam.cam.get_nparray()['pixel_data']    
                     self.image_h5[frame_idx,:,:] = self.img
                     self.h5file.flush()
                 
