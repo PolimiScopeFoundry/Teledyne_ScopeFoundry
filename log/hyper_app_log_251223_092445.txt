@@ -1,0 +1,39 @@
+2025-12-23T09:24:46|INFO|hyper_app|proposed values settings.ini
+2025-12-23T09:24:46|INFO|hyper_app|settings loaded from c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\Settings\settings.ini
+2025-12-23T09:24:48|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 277, in run
+    self.image_gen.cam.acq_start()
+    ^^^^^^^^^^^^^^^^^^
+AttributeError: 'PVcamHW' object has no attribute 'cam'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 38, in run
+    self.measurement._thread_run()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 254, in _thread_run
+    self.run()
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 297, in run
+    self.image_gen.cam.acq_stop()
+    ^^^^^^^^^^^^^^^^^^
+AttributeError: 'PVcamHW' object has no attribute 'cam'
+
+2025-12-23T09:24:57|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 38, in run
+    self.measurement._thread_run()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 254, in _thread_run
+    self.run()
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 284, in run
+    image = self.image_gen.cam.get_nparray()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraDevice.py", line 173, in get_nparray
+    frame, fps, frame_count = self.cam.poll_frame() #returns a dictionary
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\pyvcam\camera.py", line 665, in poll_frame
+    frame, fps, frame_count = pvc.get_frame(
+                              ^^^^^^^^^^^^^^
+RuntimeError: Acquisition not active.
+
+2025-12-23T09:27:56|INFO|hyper_app|on_close
+2025-12-23T09:27:56|INFO|hyper_app|disconnecting PVcamHW
+2025-12-23T09:27:56|INFO|hyper_app|disconnecting IKO_HW

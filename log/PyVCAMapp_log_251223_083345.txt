@@ -1,0 +1,15 @@
+2025-12-23T08:33:49|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\hardware.py", line 113, in enable_connection
+    raise err
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\hardware.py", line 101, in enable_connection
+    self.connect()
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraHW.py", line 76, in connect
+    self.cam = PVcamDevice()
+              ^^^^^^^^^^^^^
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraDevice.py", line 27, in __init__
+    self.cam= next(Camera.detect_camera()) # Use generator to find first camera.
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopIteration
+
+2025-12-23T08:33:54|INFO|PyVCAMapp|on_close
+2025-12-23T08:33:54|INFO|PyVCAMapp|disconnecting PVcamhw

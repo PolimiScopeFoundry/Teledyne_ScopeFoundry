@@ -1,0 +1,2 @@
+2026-01-07T11:56:03|INFO|PyVCAMapp|on_close
+2026-01-07T11:56:03|INFO|PyVCAMapp|disconnecting PVcamHW

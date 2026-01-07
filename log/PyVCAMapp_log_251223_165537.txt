@@ -1,0 +1,17 @@
+2025-12-23T16:55:38|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraApp.py", line 36, in <module>
+    app = PyVCAMapp(sys.argv)
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\base_app\base_microscope_app.py", line 92, in __init__
+    self._setup_ui_tree_column()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\base_app\base_microscope_app.py", line 209, in _setup_ui_tree_column
+    mm_tree = new_tree_widget(self.measurements.values(), ["Measurements", "Value"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\dynamical_widgets\tree_widget.py", line 37, in new_tree_widget
+    SubtreeManager(tree_widget, obj, include, exclude)
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\dynamical_widgets\tree_widget.py", line 85, in __init__
+    obj.on_new_subtree(self)
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 558, in on_new_subtree
+    subtree.tree_widget.setItemWidget(subtree.header_item, 1, widget)
+KeyboardInterrupt
+

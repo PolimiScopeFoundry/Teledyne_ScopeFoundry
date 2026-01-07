@@ -1,0 +1,19 @@
+2025-12-23T09:12:23|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_app.py", line 50, in <module>
+    app = hyper_app(sys.argv)
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\base_app\base_microscope_app.py", line 88, in __init__
+    self.setup()
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_app.py", line 39, in setup
+    self.add_measurement(hyperMeasure(self))
+                         ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 129, in __init__
+    self.setup()
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 50, in setup
+    self.image_gen = self.app.hardware['PVcamHW']
+                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\helper_funcs.py", line 41, in __getitem__
+    return self._odict[key]
+           ~~~~~~~~~~~^^^^^
+KeyError: 'PVcamHW'
+

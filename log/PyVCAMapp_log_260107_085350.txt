@@ -1,0 +1,69 @@
+2026-01-07T08:55:02|WARNING|LoggedQuantity|subarray_hsize read_from_hardware called when not connected to hardware
+2026-01-07T08:55:02|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 38, in run
+    self.measurement._thread_run()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 254, in _thread_run
+    self.run()
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraMeasurement.py", line 116, in run
+    self.cam.cam.acq_start()
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraDevice.py", line 154, in acq_start
+    self.cam.start_live()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\pyvcam\camera.py", line 833, in start_live
+    pvc.start_live(self.__handle, self.__rois, exp_time, self.__mode,
+ValueError: Failed to parse ROI members.
+
+2026-01-07T08:55:04|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 38, in run
+    self.measurement._thread_run()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 254, in _thread_run
+    self.run()
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraMeasurement.py", line 116, in run
+    self.cam.cam.acq_start()
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraDevice.py", line 154, in acq_start
+    self.cam.start_live()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\pyvcam\camera.py", line 833, in start_live
+    pvc.start_live(self.__handle, self.__rois, exp_time, self.__mode,
+ValueError: Failed to parse ROI members.
+
+2026-01-07T08:56:29|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 38, in run
+    self.measurement._thread_run()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 254, in _thread_run
+    self.run()
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraMeasurement.py", line 116, in run
+    self.cam.cam.acq_start()
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraDevice.py", line 154, in acq_start
+    self.cam.start_live()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\pyvcam\camera.py", line 833, in start_live
+    pvc.start_live(self.__handle, self.__rois, exp_time, self.__mode,
+ValueError: Failed to parse ROI members.
+
+2026-01-07T08:56:34|WARNING|LoggedQuantity|subarray_hsize read_from_hardware called when not connected to hardware
+2026-01-07T08:56:35|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 38, in run
+    self.measurement._thread_run()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 254, in _thread_run
+    self.run()
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraMeasurement.py", line 116, in run
+    self.cam.cam.acq_start()
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraDevice.py", line 154, in acq_start
+    self.cam.start_live()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\pyvcam\camera.py", line 833, in start_live
+    pvc.start_live(self.__handle, self.__rois, exp_time, self.__mode,
+ValueError: Failed to parse ROI members.
+
+2026-01-07T08:56:36|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 38, in run
+    self.measurement._thread_run()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 254, in _thread_run
+    self.run()
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraMeasurement.py", line 116, in run
+    self.cam.cam.acq_start()
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraDevice.py", line 154, in acq_start
+    self.cam.start_live()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\pyvcam\camera.py", line 833, in start_live
+    pvc.start_live(self.__handle, self.__rois, exp_time, self.__mode,
+ValueError: Failed to parse ROI members.
+
+2026-01-07T08:56:40|INFO|PyVCAMapp|on_close
+2026-01-07T08:56:40|INFO|PyVCAMapp|disconnecting PVcamHW

@@ -27,7 +27,7 @@ class PVcamDevice(object):
         self.cam= next(Camera.detect_camera()) # Use generator to find first camera.  
         #alternative: self.cam=Camera.detect_camera()[0]
         self.cam.open() 
-        self.cam.meta_data_enabled = True
+        self.cam.metadata_enabled = True
         self.cam.binning=(1,1) #a tuple for the binning (x, y)
         self.cam.exp_time= 20 #exposure time in ms 
         self.cam.readout_port=0
@@ -35,7 +35,7 @@ class PVcamDevice(object):
         self.cam.gain= 1 #PMUSBCam00 only supports gain indicies from 1 - 2.
         self.cam.trigger='Internal Trigger' #trigger mode: 'Internal Trigger', 'Edge Trigger', 'Trigger First', 'Software Trigger Edge', 'Software Trigger First'
         #readoutSpeed
-        self.cam.roi = (0,0,3200,2200)
+        self.cam.roi = [0,0,3200,2200]
 
     def get_properties(self,param_ID):
         return self.cam.get_param(param_ID)
@@ -86,35 +86,39 @@ class PVcamDevice(object):
     def set_roi(self, h0, v0, width, height):
         #h0, v0 are the coordinates of the top/bottom left corner of the ROI
         #width, height are the dimensions of the ROI
-        self.cam.meta_data_enabled = True
+        self.cam.metadata_enabled = True
         self.cam.reset_rois() #reset ROI to full sensor size before setting a new one
         self.cam.set_roi(h0, v0, width, height)  
         self.cam.roi = (h0, v0, width, height)
     
     def setSubarrayH(self, width):
-        self.cam.meta_data_enabled = True
+        self.cam.metadata_enabled = True
         h0=self.cam.roi[0]
         v0=self.cam.roi[1]
+        self.cam.roi[2]=width
         height=self.cam.roi[3]
         self.cam.set_roi(h0, v0, width, height)  
 
     def setSubarrayHpos(self, h0):
-        self.cam.meta_data_enabled = True
+        self.cam.metadata_enabled = True
+        self.cam.roi[0]= h0
         v0=self.cam.roi[1]
         width=self.cam.roi[2]
         height=self.cam.roi[3]
         self.cam.set_roi(h0, v0, width, height)  
 
     def setSubarrayV(self, height):
-        self.cam.meta_data_enabled = True
+        self.cam.metadata_enabled = True
         h0=self.cam.roi[0]
         v0=self.cam.roi[1]
         width=self.cam.roi[2]
+        self.cam.roi[3]= height
         self.cam.set_roi(h0, v0, width, height)  
 
     def setSubarrayVpos(self, v0):
-        self.cam.meta_data_enabled = True
+        self.cam.metadata_enabled = True
         h0=self.cam.roi[0]
+        self.cam.roi[1]= v0
         width=self.cam.roi[2]
         height=self.cam.roi[3]
         self.cam.set_roi(h0, v0, width, height)  
@@ -122,6 +126,18 @@ class PVcamDevice(object):
 
     def get_roi(self):
         return(self.cam.roi)
+    
+    def getSubarrayH(self):
+        return self.cam.roi[2]  #width of the ROI
+    
+    def getSubarrayV(self):
+        return self.cam.roi[3]  #height of the ROI
+
+    def getSubarrayHpos(self):
+        return self.cam.roi[0]  #x position of the ROI
+
+    def getSubarrayVpos(self):
+        return self.cam.roi[1]  #y position of the ROI
 
     def getParam(self, param_ID, attribute_ID):
         return self.cam.get_param(param_ID, attribute_ID)
@@ -213,7 +229,7 @@ if __name__ == '__main__':
     try:
         camera=PVcamDevice()
         print("Camera initialized") 
-        camera.meta_data_enabled = True
+        camera.metadata_enabled = True
         camera.acq_start()
         image=camera.get_nparray()
         plt.figure()
@@ -246,14 +262,14 @@ if __name__ == '__main__':
         camera.set_exposure(50)
         print('Exposure time [ms] is:',camera.get_exposure())
             #gain
-        camera.set_gain(2) #only supports indeces from 1 to 2
-        print('Gain is:',camera.get_gain()) 
+        # camera.set_gain(2) #only supports indeces from 1 to 2
+        # print('Gain is:',camera.get_gain()) 
             #binning
         # camera.set_binning((2,2))
         # print('Binning is:',camera.get_binning())
         #     #ROI
         # camera.set_roi(500,500,1000,1000)
-        # print('ROI is:',camera.get_roi())
+        print('ROI is:',camera.get_roi())
 
         # camera.setSubarrayV(500)
         # print('ROI is:',camera.get_roi())
@@ -264,10 +280,10 @@ if __name__ == '__main__':
         plt.imshow(image, cmap='gray')
         plt.show()
 
-        #Reading parameters
-        print('Camera info:',camera.getParam(const.PARAM_PRODUCT_NAME, const.ATTR_CURRENT))
-        print('Parallel size:',camera.getParam(const.PARAM_PAR_SIZE, const.ATTR_CURRENT))
-        print('Serial size:',camera.getParam(const.PARAM_SER_SIZE, const.ATTR_CURRENT))
+        # #Reading parameters
+        # print('Camera info:',camera.getParam(const.PARAM_PRODUCT_NAME, const.ATTR_CURRENT))
+        # print('Parallel size:',camera.getParam(const.PARAM_PAR_SIZE, const.ATTR_CURRENT))
+        # print('Serial size:',camera.getParam(const.PARAM_SER_SIZE, const.ATTR_CURRENT))
         #camera.setSubarrayH(10)
         #print('Roi horizontal:',camera.getSubarrayH())
     

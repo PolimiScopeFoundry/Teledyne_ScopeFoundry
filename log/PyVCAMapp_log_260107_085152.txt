@@ -1,0 +1,15 @@
+2026-01-07T08:51:59|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 38, in run
+    self.measurement._thread_run()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 254, in _thread_run
+    self.run()
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraMeasurement.py", line 111, in run
+    if self.cam.settings['acquisition_mode'] == 'Continuous':
+       ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\logged_quantity\collection.py", line 215, in __getitem__
+    return self._logged_quantities[key].val
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+KeyError: 'acquisition_mode'
+
+2026-01-07T08:53:44|INFO|PyVCAMapp|on_close
+2026-01-07T08:53:44|INFO|PyVCAMapp|disconnecting PVcamHW

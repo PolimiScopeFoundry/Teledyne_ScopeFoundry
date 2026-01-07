@@ -1,0 +1,12 @@
+2025-12-23T16:55:12|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 38, in run
+    self.measurement._thread_run()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 254, in _thread_run
+    self.run()
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraMeasurement.py", line 115, in run
+    print('Check frame status:', self.cam.cam.cam.check_frame_status())
+                                 ^^^^^^^^^^^^
+AttributeError: 'PVcamHW' object has no attribute 'cam'
+
+2025-12-23T16:55:32|INFO|PyVCAMapp|on_close
+2025-12-23T16:55:32|INFO|PyVCAMapp|disconnecting PVcamHW

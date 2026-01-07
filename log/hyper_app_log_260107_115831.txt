@@ -1,0 +1,37 @@
+2026-01-07T11:58:35|INFO|hyper_app|proposed values settings.ini
+2026-01-07T11:58:35|INFO|hyper_app|settings loaded from c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\Settings\settings.ini
+2026-01-07T11:58:44|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 38, in run
+    self.measurement._thread_run()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 254, in _thread_run
+    self.run()
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 263, in run
+    self.img = self.image_gen.cam.get_nparray()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraDevice.py", line 167, in get_nparray
+    frame, fps, frame_count = self.cam.poll_frame()
+                             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\pyvcam\camera.py", line 665, in poll_frame
+    frame, fps, frame_count = pvc.get_frame(
+                              ^^^^^^^^^^^^^^
+RuntimeError: Acquisition not active.
+
+2026-01-07T12:00:52|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 38, in run
+    self.measurement._thread_run()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 254, in _thread_run
+    self.run()
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 263, in run
+    self.img = self.image_gen.cam.get_nparray()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraDevice.py", line 167, in get_nparray
+    frame, fps, frame_count = self.cam.poll_frame()
+                             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\pyvcam\camera.py", line 665, in poll_frame
+    frame, fps, frame_count = pvc.get_frame(
+                              ^^^^^^^^^^^^^^
+RuntimeError: Acquisition not active.
+
+2026-01-07T12:01:01|INFO|hyper_app|on_close
+2026-01-07T12:01:01|INFO|hyper_app|disconnecting PVcamHW
+2026-01-07T12:01:01|INFO|hyper_app|disconnecting IKO_HW

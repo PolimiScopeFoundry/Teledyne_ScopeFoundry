@@ -1,0 +1,10 @@
+2025-12-23T08:29:56|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_app.py", line 50, in <module>
+    app = hyper_app(sys.argv)
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\base_app\base_microscope_app.py", line 88, in __init__
+    self.setup()
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_app.py", line 28, in setup
+    from CameraHW import PVcamHW
+ModuleNotFoundError: No module named 'CameraHW'
+

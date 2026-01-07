@@ -1,0 +1,44 @@
+2026-01-07T11:50:26|INFO|hyper_app|proposed values settings.ini
+2026-01-07T11:50:26|INFO|hyper_app|settings loaded from c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\Settings\settings.ini
+2026-01-07T11:50:30|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 38, in run
+    self.measurement._thread_run()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 254, in _thread_run
+    self.run()
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 286, in run
+    print('Debugging: Check frame status:', self.image_gen.cam.cam.check_frame_status())
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\pyvcam\camera.py", line 440, in check_frame_status
+    status = pvc.check_frame_status(self.__handle)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Buffer must be integer-multiple of frame size (PL_ERR_BUFFER_SIZE_INVALID)
+
+2026-01-07T11:52:41|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 38, in run
+    self.measurement._thread_run()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 254, in _thread_run
+    self.run()
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 286, in run
+    print('Debugging: Check frame status:', self.image_gen.cam.cam.check_frame_status())
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\pyvcam\camera.py", line 440, in check_frame_status
+    status = pvc.check_frame_status(self.__handle)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Buffer must be integer-multiple of frame size (PL_ERR_BUFFER_SIZE_INVALID)
+
+2026-01-07T11:52:58|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 38, in run
+    self.measurement._thread_run()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 254, in _thread_run
+    self.run()
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 286, in run
+    print('Debugging: Check frame status:', self.image_gen.cam.cam.check_frame_status())
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\pyvcam\camera.py", line 440, in check_frame_status
+    status = pvc.check_frame_status(self.__handle)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Buffer must be integer-multiple of frame size (PL_ERR_BUFFER_SIZE_INVALID)
+
+2026-01-07T11:53:00|INFO|hyper_app|on_close
+2026-01-07T11:53:00|INFO|hyper_app|disconnecting PVcamHW
+2026-01-07T11:53:01|INFO|hyper_app|disconnecting IKO_HW

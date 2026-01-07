@@ -1,0 +1,237 @@
+2025-12-23T12:45:16|INFO|hyper_app|proposed values settings.ini
+2025-12-23T12:45:16|INFO|hyper_app|settings loaded from c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\Settings\settings.ini
+2025-12-23T12:45:28|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 38, in run
+    self.measurement._thread_run()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 254, in _thread_run
+    self.run()
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 289, in run
+    self.img = self.image_gen.cam.get_nparray()['pixel_data']
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraDevice.py", line 173, in get_nparray
+    frame, fps, frame_count = self.cam.poll_frame() #returns a dictionary
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\pyvcam\camera.py", line 665, in poll_frame
+    frame, fps, frame_count = pvc.get_frame(
+                              ^^^^^^^^^^^^^^
+RuntimeError: Acquisition not active.
+
+2025-12-23T12:45:33|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 38, in run
+    self.measurement._thread_run()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 254, in _thread_run
+    self.run()
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 289, in run
+    self.img = self.image_gen.cam.get_nparray()['pixel_data']
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraDevice.py", line 173, in get_nparray
+    frame, fps, frame_count = self.cam.poll_frame() #returns a dictionary
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\pyvcam\camera.py", line 665, in poll_frame
+    frame, fps, frame_count = pvc.get_frame(
+                              ^^^^^^^^^^^^^^
+RuntimeError: Acquisition not active.
+
+2025-12-23T12:45:37|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 38, in run
+    self.measurement._thread_run()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 254, in _thread_run
+    self.run()
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 289, in run
+    self.img = self.image_gen.cam.get_nparray()['pixel_data']
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraDevice.py", line 173, in get_nparray
+    frame, fps, frame_count = self.cam.poll_frame() #returns a dictionary
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\pyvcam\camera.py", line 665, in poll_frame
+    frame, fps, frame_count = pvc.get_frame(
+                              ^^^^^^^^^^^^^^
+RuntimeError: Acquisition not active.
+
+2025-12-23T12:45:44|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 38, in run
+    self.measurement._thread_run()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 254, in _thread_run
+    self.run()
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 289, in run
+    self.img = self.image_gen.cam.get_nparray()['pixel_data']
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraDevice.py", line 173, in get_nparray
+    frame, fps, frame_count = self.cam.poll_frame() #returns a dictionary
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\pyvcam\camera.py", line 665, in poll_frame
+    frame, fps, frame_count = pvc.get_frame(
+                              ^^^^^^^^^^^^^^
+RuntimeError: Acquisition not active.
+
+2025-12-23T12:45:51|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 38, in run
+    self.measurement._thread_run()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 254, in _thread_run
+    self.run()
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 289, in run
+    self.img = self.image_gen.cam.get_nparray()['pixel_data']
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraDevice.py", line 173, in get_nparray
+    frame, fps, frame_count = self.cam.poll_frame() #returns a dictionary
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\pyvcam\camera.py", line 665, in poll_frame
+    frame, fps, frame_count = pvc.get_frame(
+                              ^^^^^^^^^^^^^^
+RuntimeError: Acquisition not active.
+
+2025-12-23T12:45:57|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 38, in run
+    self.measurement._thread_run()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 254, in _thread_run
+    self.run()
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 289, in run
+    self.img = self.image_gen.cam.get_nparray()['pixel_data']
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraDevice.py", line 173, in get_nparray
+    frame, fps, frame_count = self.cam.poll_frame() #returns a dictionary
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\pyvcam\camera.py", line 665, in poll_frame
+    frame, fps, frame_count = pvc.get_frame(
+                              ^^^^^^^^^^^^^^
+RuntimeError: Acquisition not active.
+
+2025-12-23T12:46:02|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 38, in run
+    self.measurement._thread_run()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 254, in _thread_run
+    self.run()
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 289, in run
+    self.img = self.image_gen.cam.get_nparray()['pixel_data']
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraDevice.py", line 173, in get_nparray
+    frame, fps, frame_count = self.cam.poll_frame() #returns a dictionary
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\pyvcam\camera.py", line 665, in poll_frame
+    frame, fps, frame_count = pvc.get_frame(
+                              ^^^^^^^^^^^^^^
+RuntimeError: Acquisition not active.
+
+2025-12-23T12:46:08|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 38, in run
+    self.measurement._thread_run()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 254, in _thread_run
+    self.run()
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 289, in run
+    self.img = self.image_gen.cam.get_nparray()['pixel_data']
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraDevice.py", line 173, in get_nparray
+    frame, fps, frame_count = self.cam.poll_frame() #returns a dictionary
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\pyvcam\camera.py", line 665, in poll_frame
+    frame, fps, frame_count = pvc.get_frame(
+                              ^^^^^^^^^^^^^^
+RuntimeError: Acquisition not active.
+
+2025-12-23T16:05:52|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 38, in run
+    self.measurement._thread_run()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 254, in _thread_run
+    self.run()
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 280, in run
+    self.image_gen.read_from_hardware()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\hardware.py", line 145, in read_from_hardware
+    lq.read_from_hardware()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\logged_quantity\logged_quantity.py", line 191, in read_from_hardware
+    val = self.hardware_read_func()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraDevice.py", line 63, in get_temperature
+    return self.cam.temp
+           ^^^^^^^^^^^^^
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\pyvcam\camera.py", line 1370, in temp
+    return self.get_param(const.PARAM_TEMP) / 100.0
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\pyvcam\camera.py", line 502, in get_param
+    return pvc.get_param(self.__handle, param_id, param_attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: The device has been unexpectedly removed (PL_ERR_DEVICE_REMOVED)
+
+2025-12-23T16:05:52|ERROR|hyperMeasure|hyper failed to update display: The device has been unexpectedly removed (PL_ERR_DEVICE_REMOVED). Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 102, in update_display
+    self.image_gen.read_from_hardware()
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\hardware.py", line 145, in read_from_hardware
+    lq.read_from_hardware()
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\logged_quantity\logged_quantity.py", line 191, in read_from_hardware
+    val = self.hardware_read_func()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraDevice.py", line 63, in get_temperature
+    return self.cam.temp
+           ^^^^^^^^^^^^^
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\pyvcam\camera.py", line 1370, in temp
+    return self.get_param(const.PARAM_TEMP) / 100.0
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\pyvcam\camera.py", line 502, in get_param
+    return pvc.get_param(self.__handle, param_id, param_attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+RuntimeError: The device has been unexpectedly removed (PL_ERR_DEVICE_REMOVED)
+
+2025-12-23T16:05:58|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 38, in run
+    self.measurement._thread_run()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 254, in _thread_run
+    self.run()
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 280, in run
+    self.image_gen.read_from_hardware()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\hardware.py", line 145, in read_from_hardware
+    lq.read_from_hardware()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\logged_quantity\logged_quantity.py", line 191, in read_from_hardware
+    val = self.hardware_read_func()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraDevice.py", line 63, in get_temperature
+    return self.cam.temp
+           ^^^^^^^^^^^^^
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\pyvcam\camera.py", line 1370, in temp
+    return self.get_param(const.PARAM_TEMP) / 100.0
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\pyvcam\camera.py", line 502, in get_param
+    return pvc.get_param(self.__handle, param_id, param_attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: The device has been unexpectedly removed (PL_ERR_DEVICE_REMOVED)
+
+2025-12-23T16:05:58|ERROR|hyperMeasure|hyper failed to update display: The device has been unexpectedly removed (PL_ERR_DEVICE_REMOVED). Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 102, in update_display
+    self.image_gen.read_from_hardware()
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\hardware.py", line 145, in read_from_hardware
+    lq.read_from_hardware()
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\logged_quantity\logged_quantity.py", line 191, in read_from_hardware
+    val = self.hardware_read_func()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraDevice.py", line 63, in get_temperature
+    return self.cam.temp
+           ^^^^^^^^^^^^^
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\pyvcam\camera.py", line 1370, in temp
+    return self.get_param(const.PARAM_TEMP) / 100.0
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\pyvcam\camera.py", line 502, in get_param
+    return pvc.get_param(self.__handle, param_id, param_attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+RuntimeError: The device has been unexpectedly removed (PL_ERR_DEVICE_REMOVED)
+
+2025-12-23T16:06:06|INFO|hyper_app|on_close
+2025-12-23T16:06:06|INFO|hyper_app|disconnecting PVcamHW
+2025-12-23T16:06:06|INFO|hyper_app|disconnecting IKO_HW

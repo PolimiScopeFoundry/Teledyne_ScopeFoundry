@@ -18,6 +18,8 @@ class PVcamHW(HardwareComponent):
         self.temperature = self.settings.New(name='temperature', dtype=float, ro=True, unit='°C')
         self.temperature_setpoint = self.settings.New(name='temperature_setpoint', dtype=float, 
                                                       ro=True, unit='°C')
+        self.number_frames = self.add_logged_quantity("number_frames", dtype = int, si = False, ro = 0, 
+                                        initial = 200, vmin = 1, reread_from_hardware_after_write = True)
         self.image_width = self.settings.New(name='image_width', dtype=int, ro=True)
         self.image_height = self.settings.New(name='image_height', dtype=int, ro=True)
         # self.binning_x=self.settings.New(name='binning_x', dtype=int, ro=False, choices = [1, 2, 4],
@@ -29,20 +31,20 @@ class PVcamHW(HardwareComponent):
         self.binning=self.settings.New(name='binning', dtype=int, ro=False,choices = [1, 2, 4],
                                     initial = 1, reread_from_hardware_after_write = True)
 
-        self.subarrayh = self.settings.New("subarray_hsize", dtype=float, si = False, ro= 0,
+        self.subarrayh = self.settings.New("subarray_hsize", dtype=int, si = False, ro= 0,
                                                    spinbox_step = 4, spinbox_decimals = 0, initial = 3200,
                                                    vmin = 4, vmax = 3200, reread_from_hardware_after_write = True)
         
-        self.subarrayv = self.settings.New("subarray_vsize", dtype=float, si = False, ro= 0, 
+        self.subarrayv = self.settings.New("subarray_vsize", dtype=int, si = False, ro= 0, 
                                                   spinbox_step = 4, spinbox_decimals = 0, initial = 2200, 
-                                                  vmin = 4, vmax = 3200, reread_from_hardware_after_write = True)
+                                                  vmin = 4, vmax = 2200, reread_from_hardware_after_write = True)
         
-        self.subarrayh_pos = self.settings.New('subarrayh_pos', dtype = float, si = False, ro = 0,
+        self.subarrayh_pos = self.settings.New('subarrayh_pos', dtype = int, si = False, ro = 0,
                                                       spinbox_step = 4, spinbox_decimals = 0, initial = 0, 
                                                       vmin = 0, vmax = 3196, reread_from_hardware_after_write = True,
                                                       description = "The default value 0 corresponds to the first pixel starting from the left")
         
-        self.subarrayv_pos = self.settings.New('subarrayv_pos', dtype = float, si = False, ro = 0,
+        self.subarrayv_pos = self.settings.New('subarrayv_pos', dtype = int, si = False, ro = 0,
                                                       spinbox_step = 4, spinbox_decimals = 0, initial = 0, 
                                                       vmin = 0, vmax = 2196, reread_from_hardware_after_write = True,
                                                       description = "The default value 0 corresponds to the first pixel starting from the top/bottom")
@@ -57,8 +59,8 @@ class PVcamHW(HardwareComponent):
         self.exposure_time = self.settings.New(name='exposure_time', initial=20, vmax =3600000,
                                                vmin = 0, spinbox_step = 0.01,dtype=int, ro=False, unit='ms',
                                                reread_from_hardware_after_write=True)
-        # self.acquisition_mode = self.settings.New(name='acquisition_mode', dtype=str,
-        #                                           choices=['Continuous', 'MultiFrame'], initial = 'Continuous', ro=False, reread_from_hardware_after_write = True)  #Uncomment to choose acquisition mode
+        self.acquisition_mode = self.settings.New(name='acquisition_mode', dtype=str,
+                                                  choices=['Continuous', 'MultiFrame'], initial = 'Continuous', ro=False, reread_from_hardware_after_write = True)  #Uncomment to choose acquisition mode
         self.trmode = self.add_logged_quantity('trigger_mode', dtype=str, si=False, ro=0, 
                                        choices = ['Internal Trigger', 'Edge Trigger', 'Trigger First', 'Software Trigger Edge', 'Software Trigger First'], initial = 'Internal Trigger', reread_from_hardware_after_write = True)
 
@@ -78,10 +80,10 @@ class PVcamHW(HardwareComponent):
         self.gain.hardware_read_func = self.cam.get_gain
         self.binning.hardware_read_func = self.cam.get_binning      
         self.trmode.hardware_read_func = self.cam.get_trigger_mode    
-        #self.subarrayh.hardware_read_func = self.cam.getSubarrayH
-        #self.subarrayv.hardware_read_func = self.cam.getSubarrayV
-        #self.subarrayh_pos.hardware_read_func = self.cam.getSubarrayHpos
-        #self.subarrayv_pos.hardware_read_func = self.cam.getSubarrayVpos
+        self.subarrayh.hardware_read_func = self.cam.getSubarrayH
+        self.subarrayv.hardware_read_func = self.cam.getSubarrayV
+        self.subarrayh_pos.hardware_read_func = self.cam.getSubarrayHpos
+        self.subarrayv_pos.hardware_read_func = self.cam.getSubarrayVpos
         #self.roi.hardware_read_func = self.cam.get_roi
 
         self.exposure_time.hardware_set_func=self.cam.set_exposure
@@ -90,7 +92,6 @@ class PVcamHW(HardwareComponent):
         self.binning.hardware_set_func = self.cam.set_binning
         self.gain.hardware_set_func = self.cam.set_gain
         self.subarrayh.hardware_set_func = self.cam.setSubarrayH
-        #self.subarrayh.hardware_set_func = self.cam.set_roi
         self.subarrayv.hardware_set_func = self.cam.setSubarrayV
         self.subarrayh_pos.hardware_set_func = self.cam.setSubarrayHpos
         self.subarrayv_pos.hardware_set_func = self.cam.setSubarrayVpos

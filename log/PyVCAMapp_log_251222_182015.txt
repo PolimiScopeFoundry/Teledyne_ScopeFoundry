@@ -1,0 +1,13 @@
+2025-12-22T18:20:16|CRITICAL|root|Unhandled exception:Traceback (most recent call last):
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraApp.py", line 36, in <module>
+    app = PyVCAMapp(sys.argv)
+  File "C:\ProgramData\anaconda3\envs\scopefoundry\lib\site-packages\ScopeFoundry\base_app.py", line 368, in __init__
+    self.setup()
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraApp.py", line 23, in setup
+    from CameraHW import PVcamHW
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraHW.py", line 10, in <module>
+    from CameraDevice import PVcamDevice
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraDevice.py", line 10, in <module>
+    from pyvcam import pvc
+ModuleNotFoundError: No module named 'pyvcam'
+

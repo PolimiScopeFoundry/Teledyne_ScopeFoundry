@@ -1,0 +1,19 @@
+2025-12-23T09:13:29|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraApp.py", line 36, in <module>
+    app = PyVCAMapp(sys.argv)
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\base_app\base_microscope_app.py", line 88, in __init__
+    self.setup()
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraApp.py", line 29, in setup
+    self.add_measurement(PVcamMeasure(self))
+                         ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 129, in __init__
+    self.setup()
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraMeasurement.py", line 40, in setup
+    self.cam = self.app.hardware['PVcamhw']
+              ~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\helper_funcs.py", line 41, in __getitem__
+    return self._odict[key]
+           ~~~~~~~~~~~^^^^^
+KeyError: 'PVcamhw'
+

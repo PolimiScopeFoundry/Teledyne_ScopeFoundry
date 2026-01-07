@@ -1,0 +1,24 @@
+2026-01-07T14:31:07|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\pyvcam\camera.py", line 235, in open
+    self.__handle = pvc.open_camera(self.__name)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Driver device failed to open (PL_ERR_DDI_DEVICE_OPEN_FAILED)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\hardware.py", line 113, in enable_connection
+    raise err
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\hardware.py", line 101, in enable_connection
+    self.connect()
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraHW.py", line 69, in connect
+    self.cam = PVcamDevice()
+              ^^^^^^^^^^^^^
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraDevice.py", line 29, in __init__
+    self.cam.open()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\pyvcam\camera.py", line 238, in open
+    raise RuntimeError('Failed to open camera.') from ex
+RuntimeError: Failed to open camera.
+
+2026-01-07T14:31:10|INFO|PyVCAMapp|on_close
+2026-01-07T14:31:10|INFO|PyVCAMapp|disconnecting PVcamHW

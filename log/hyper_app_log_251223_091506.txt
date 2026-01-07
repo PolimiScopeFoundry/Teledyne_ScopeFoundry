@@ -1,0 +1,884 @@
+2025-12-23T09:15:07|INFO|hyper_app|proposed values settings.ini
+2025-12-23T09:15:07|INFO|hyper_app|settings loaded from c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\Settings\settings.ini
+2025-12-23T09:15:21|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 38, in run
+    self.measurement._thread_run()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 254, in _thread_run
+    self.run()
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 284, in run
+    self.img = self.image_gen.cam.get_nparray()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraDevice.py", line 173, in get_nparray
+    frame, fps, frame_count = self.cam.poll_frame() #returns a dictionary
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\pyvcam\camera.py", line 665, in poll_frame
+    frame, fps, frame_count = pvc.get_frame(
+                              ^^^^^^^^^^^^^^
+RuntimeError: Acquisition not active.
+
+2025-12-23T09:15:32|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:32|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:32|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:32|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:32|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:33|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:33|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:33|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:33|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:33|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:33|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:33|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:33|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:33|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:33|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:33|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:33|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:33|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:33|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:33|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:33|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:34|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:34|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:34|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:34|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:34|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:34|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:34|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:34|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:34|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:34|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:34|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:34|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:34|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:34|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:34|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:34|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:35|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:35|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:35|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:35|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:35|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:35|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:35|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:35|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:35|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:35|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:35|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:35|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:35|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:35|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:35|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:35|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:36|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:36|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:36|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:36|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:36|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:36|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:36|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:36|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:36|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:36|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:36|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:36|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:36|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:36|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:36|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:36|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:37|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:37|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:37|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:37|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:37|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:37|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:37|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:15:37|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 38, in run
+    self.measurement._thread_run()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 254, in _thread_run
+    self.run()
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 284, in run
+    self.img = self.image_gen.cam.get_nparray()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Python Programs\ScopeFoundry Projects\Teledyne_ScopeFoundry\CameraDevice.py", line 173, in get_nparray
+    frame, fps, frame_count = self.cam.poll_frame() #returns a dictionary
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\pyvcam\camera.py", line 665, in poll_frame
+    frame, fps, frame_count = pvc.get_frame(
+                              ^^^^^^^^^^^^^^
+RuntimeError: Acquisition not active.
+
+2025-12-23T09:15:37|ERROR|hyperMeasure|hyper failed to update display: 'dict' object has no attribute 'T'. Traceback (most recent call last):
+
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 684, in _on_display_update_timer
+    self.m.update_display()
+
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 113, in update_display
+    self.imv.setImage(self.img.T,
+                      ^^^^^^^^^^
+
+AttributeError: 'dict' object has no attribute 'T'
+
+2025-12-23T09:19:27|INFO|hyper_app|on_close
+2025-12-23T09:19:27|INFO|hyper_app|disconnecting PVcamHW
+2025-12-23T09:19:28|INFO|hyper_app|disconnecting IKO_HW

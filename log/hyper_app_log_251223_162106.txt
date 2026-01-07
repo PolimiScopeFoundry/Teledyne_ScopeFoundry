@@ -1,0 +1,15 @@
+2025-12-23T16:21:07|INFO|hyper_app|proposed values settings.ini
+2025-12-23T16:21:07|INFO|hyper_app|settings loaded from c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\Settings\settings.ini
+2025-12-23T16:21:22|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 38, in run
+    self.measurement._thread_run()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 254, in _thread_run
+    self.run()
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 289, in run
+    print('Check freame status:', self.image_gen.cam.camera.check_frame_status())
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PVcamDevice' object has no attribute 'camera'
+
+2025-12-23T16:21:58|INFO|hyper_app|on_close
+2025-12-23T16:21:58|INFO|hyper_app|disconnecting PVcamHW
+2025-12-23T16:21:58|INFO|hyper_app|disconnecting IKO_HW

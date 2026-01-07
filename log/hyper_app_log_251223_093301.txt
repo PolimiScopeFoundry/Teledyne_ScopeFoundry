@@ -1,0 +1,15 @@
+2025-12-23T09:33:02|INFO|hyper_app|proposed values settings.ini
+2025-12-23T09:33:02|INFO|hyper_app|settings loaded from c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\Settings\settings.ini
+2025-12-23T09:33:06|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 38, in run
+    self.measurement._thread_run()
+  File "C:\Users\hyper\.conda\envs\IKOtwins\Lib\site-packages\ScopeFoundry\measurement.py", line 254, in _thread_run
+    self.run()
+  File "c:\Python Programs\ScopeFoundry Projects\Hyperspectral_microscope\hyperspectral_measure.py", line 276, in run
+    self.image_gen.cam.settings['acquisition_mode'] == 'Continuous'
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PVcamDevice' object has no attribute 'settings'
+
+2025-12-23T09:35:27|INFO|hyper_app|on_close
+2025-12-23T09:35:27|INFO|hyper_app|disconnecting PVcamHW
+2025-12-23T09:35:27|INFO|hyper_app|disconnecting IKO_HW
