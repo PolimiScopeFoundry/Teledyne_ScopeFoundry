@@ -112,10 +112,11 @@ class PVcamMeasure(Measurement):
             """
             If mode is Continuous, acquire frames indefinitely. No save in h5 is permormed 
             """
-            
+
             self.cam.cam.acq_start() 
             while not self.interrupt_measurement_called:
-                self.image = self.cam.cam.get_nparray() 
+
+                self.image = self.cam.cam.get_nparray()['pixel_data'] 
                 if self.interrupt_measurement_called:
                     break
             
@@ -144,8 +145,8 @@ class PVcamMeasure(Measurement):
                     if not first_frame_acquired:
                         self.create_h5_file()
                         first_frame_acquired = True
-                        
-                    self.img= self.cam.cam.get_nparray()   
+
+                    self.img= self.cam.cam.poll_frame()    
                     self.image_h5[frame_idx,:,:] = self.img
                     self.h5file.flush()
                 

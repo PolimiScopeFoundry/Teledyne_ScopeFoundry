@@ -33,7 +33,7 @@ class PVcamDevice(object):
         self.cam.readout_port=0
         self.cam.speed_table_index=0
         self.cam.gain= 1 #PMUSBCam00 only supports gain indicies from 1 - 2.
-        self.cam.trigger='Internal Trigger' #trigger mode: 'Internal Trigger', 'Edge Trigger', 'Trigger First', 'Software Trigger Edge', 'Software Trigger First'
+        self.cam.exp_mode='Internal Trigger' #trigger mode: 'Internal Trigger', 'Edge Trigger', 'Trigger First', 'Software Trigger Edge', 'Software Trigger First'
         #readoutSpeed
         self.cam.roi = [0,0,3200,2200]
 
@@ -47,11 +47,20 @@ class PVcamDevice(object):
 
     def set_trigger_mode(self, mode):
         self.cam.exp_mode = mode
-
-#_acquisition_mode is a private attribute and there is no built-in function to get it. Its values are 'Live' or 'Sequence'.
-#what I am doing here is setting the exposure mode/trigger mode. Its values are 'Internal Trigger', 'Edge Trigger', 'Trigger First', 
-# 'Software Trigger Edge', 'Software Trigger First'.
-
+    '''
+    _acquisition_mode is a private attribute and there is no built-in function to get it. Its values are 'Live' or 'Sequence'.
+    what I am doing here is setting the exposure mode/trigger mode. Its values are 'Internal Trigger', 'Edge Trigger', 'Trigger First', 
+    'Software Trigger Edge', 'Software Trigger First'.
+    From constants.py:
+    EXT_TRIG_INTERNAL          = (7 + 0) << 8 = 7  << 8 = 1792
+    EXT_TRIG_TRIG_FIRST        = (7 + 1) << 8 = 8  << 8 = 2048
+    EXT_TRIG_EDGE_RISING       = (7 + 2) << 8 = 9  << 8 = 2304
+    EXT_TRIG_LEVEL             = (7 + 3) << 8 = 10 << 8 = 2560
+    EXT_TRIG_SOFTWARE_FIRST    = (7 + 4) << 8 = 11 << 8 = 2816
+    EXT_TRIG_SOFTWARE_EDGE     = (7 + 5) << 8 = 12 << 8 = 3072
+    EXT_TRIG_LEVEL_OVERLAP     = (7 + 6) << 8 = 13 << 8 = 3328
+    EXT_TRIG_LEVEL_PULSED      = (7 + 7) << 8 = 14 << 8 = 3584
+    '''
     
     def set_framenum(self, Nframes): #do I have to introduce another setting?
         pass
@@ -284,6 +293,8 @@ if __name__ == '__main__':
         # print('Camera info:',camera.getParam(const.PARAM_PRODUCT_NAME, const.ATTR_CURRENT))
         # print('Parallel size:',camera.getParam(const.PARAM_PAR_SIZE, const.ATTR_CURRENT))
         # print('Serial size:',camera.getParam(const.PARAM_SER_SIZE, const.ATTR_CURRENT))
+        print('Exposure mode:', camera.getParam
+              (const.PARAM_EXPOSURE_MODE, const.ATTR_CURRENT))
         #camera.setSubarrayH(10)
         #print('Roi horizontal:',camera.getSubarrayH())
     
