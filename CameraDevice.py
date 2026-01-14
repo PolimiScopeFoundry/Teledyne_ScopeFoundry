@@ -14,6 +14,7 @@ from pyvcam import constants as const
 class PVcamDevice(object):
     """
     Scopefoundry compatible class to run PVCAM cameras
+    More details on pyvcam library: https://docs.teledynevisionsolutions.com/pvcam-sdk/index.xhtml
     """
     #camera initialization 
     def __init__(self):
@@ -50,6 +51,7 @@ class PVcamDevice(object):
     '''
     _acquisition_mode is a private attribute and there is no built-in function to get it. Its values are 'Live' or 'Sequence'.
     what I am doing here is setting the exposure mode/trigger mode. Its values are 'Internal Trigger', 'Edge Trigger', 'Trigger First', 
+<<<<<<< HEAD
     'Software Trigger Edge', 'Software Trigger First'.
     From constants.py:
     EXT_TRIG_INTERNAL          = (7 + 0) << 8 = 7  << 8 = 1792
@@ -61,6 +63,16 @@ class PVcamDevice(object):
     EXT_TRIG_LEVEL_OVERLAP     = (7 + 6) << 8 = 13 << 8 = 3328
     EXT_TRIG_LEVEL_PULSED      = (7 + 7) << 8 = 14 << 8 = 3584
     '''
+=======
+    'Software Trigger Edge', 'Software Trigger First':
+        - Internal Trigger:  each frame captured in the sequence is controlled by the internal timing generators of the camera.
+        - Edge Trigger: each frame captured in the sequence is controlled by an external trigger signal.
+        - Trigger First: the first frame in the sequence is triggered by an external trigger signal, and all subsequent frames are 
+            controlled by the internal timing generators of the camera.
+        - Software Trigger Edge: each frame captured in the sequence is triggered by a software trigger command.
+    '''
+
+>>>>>>> d7ad66a8137c04b349d7ccdbc8e8db1f54154b6b
     
     def set_framenum(self, Nframes): #do I have to introduce another setting?
         pass
