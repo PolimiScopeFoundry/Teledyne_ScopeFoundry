@@ -14,7 +14,6 @@ from pyvcam import constants as const
 class PVcamDevice(object):
     """
     Scopefoundry compatible class to run PVCAM cameras
-    More details on pyvcam library: https://docs.teledynevisionsolutions.com/pvcam-sdk/index.xhtml
     """
     #camera initialization 
     def __init__(self):
@@ -29,12 +28,13 @@ class PVcamDevice(object):
         #alternative: self.cam=Camera.detect_camera()[0]
         self.cam.open() 
         self.cam.metadata_enabled = True
-        self.cam.binning=(1,1) #a tuple for the binning (x, y)
-        self.cam.exp_time= 20 #exposure time in ms 
-        self.cam.readout_port=0
-        self.cam.speed_table_index=0
-        self.cam.gain= 1 #PMUSBCam00 only supports gain indicies from 1 - 2.
-        self.cam.exp_mode='Internal Trigger' #trigger mode: 'Internal Trigger', 'Edge Trigger', 'Trigger First', 'Software Trigger Edge', 'Software Trigger First'
+        self.cam.binning = (1,1) #a tuple for the binning (x, y)
+        self.cam.exp_time = 20 #exposure time in ms 
+        self.cam.readout_port = 0 # 0- Speed; 1- Long Exposure; 2- Long Exposure EDR (Extended Dynamic Range)
+        self.cam.speed_table_index = 0
+        self.cam.speed = 0 #always 0 for different readout ports
+        self.cam.gain =  1 # 1-Full Well; 2-Sensitivity (for readout 1 and 2); only 1-Dynamic Range (for readout 0) 
+        self.cam.exp_mode = 'Internal Trigger' #trigger mode: 'Internal Trigger', 'Edge Trigger', 'Trigger First', 'Software Trigger Edge', 'Software Trigger First'
         #readoutSpeed
         self.cam.roi = [0,0,3200,2200]
 
@@ -48,31 +48,20 @@ class PVcamDevice(object):
 
     def set_trigger_mode(self, mode):
         self.cam.exp_mode = mode
-    '''
-    _acquisition_mode is a private attribute and there is no built-in function to get it. Its values are 'Live' or 'Sequence'.
-    what I am doing here is setting the exposure mode/trigger mode. Its values are 'Internal Trigger', 'Edge Trigger', 'Trigger First', 
-<<<<<<< HEAD
-    'Software Trigger Edge', 'Software Trigger First'.
-    From constants.py:
-    EXT_TRIG_INTERNAL          = (7 + 0) << 8 = 7  << 8 = 1792
-    EXT_TRIG_TRIG_FIRST        = (7 + 1) << 8 = 8  << 8 = 2048
-    EXT_TRIG_EDGE_RISING       = (7 + 2) << 8 = 9  << 8 = 2304
-    EXT_TRIG_LEVEL             = (7 + 3) << 8 = 10 << 8 = 2560
-    EXT_TRIG_SOFTWARE_FIRST    = (7 + 4) << 8 = 11 << 8 = 2816
-    EXT_TRIG_SOFTWARE_EDGE     = (7 + 5) << 8 = 12 << 8 = 3072
-    EXT_TRIG_LEVEL_OVERLAP     = (7 + 6) << 8 = 13 << 8 = 3328
-    EXT_TRIG_LEVEL_PULSED      = (7 + 7) << 8 = 14 << 8 = 3584
-    '''
-=======
-    'Software Trigger Edge', 'Software Trigger First':
-        - Internal Trigger:  each frame captured in the sequence is controlled by the internal timing generators of the camera.
-        - Edge Trigger: each frame captured in the sequence is controlled by an external trigger signal.
-        - Trigger First: the first frame in the sequence is triggered by an external trigger signal, and all subsequent frames are 
-            controlled by the internal timing generators of the camera.
-        - Software Trigger Edge: each frame captured in the sequence is triggered by a software trigger command.
-    '''
-
->>>>>>> d7ad66a8137c04b349d7ccdbc8e8db1f54154b6b
+        '''
+        _acquisition_mode is a private attribute and there is no built-in function to get it. Its values are 'Live' or 'Sequence'.
+        what I am doing here is setting the exposure mode/trigger mode. Its values are 'Internal Trigger', 'Edge Trigger', 'Trigger First', 
+        'Software Trigger Edge', 'Software Trigger First'.
+        From constants.py:
+        EXT_TRIG_INTERNAL          = (7 + 0) << 8 = 7  << 8 = 1792
+        EXT_TRIG_TRIG_FIRST        = (7 + 1) << 8 = 8  << 8 = 2048
+        EXT_TRIG_EDGE_RISING       = (7 + 2) << 8 = 9  << 8 = 2304
+        EXT_TRIG_LEVEL             = (7 + 3) << 8 = 10 << 8 = 2560
+        EXT_TRIG_SOFTWARE_FIRST    = (7 + 4) << 8 = 11 << 8 = 2816
+        EXT_TRIG_SOFTWARE_EDGE     = (7 + 5) << 8 = 12 << 8 = 3072
+        EXT_TRIG_LEVEL_OVERLAP     = (7 + 6) << 8 = 13 << 8 = 3328
+        EXT_TRIG_LEVEL_PULSED      = (7 + 7) << 8 = 14 << 8 = 3584
+        '''
     
     def set_framenum(self, Nframes): #do I have to introduce another setting?
         pass
@@ -182,6 +171,15 @@ class PVcamDevice(object):
     def set_gain(self, desired_gain):
         self.cam.gain = desired_gain
 
+    def set_readout(self, desired_readout):
+         # When changing anything in speed table it is strongly recommended to set
+        # all 3 properties (readout_port, speed, gain) in predefined order.
+        # After changing `readout_port` re-apply the value of `speed`.
+        # After changing `speed` re-apply the `gain` value.
+        self.cam.readout_port = desired_readout
+        self.cam.speed = 0
+        self.cam.gain = 1 #reset to default gain (exists for all readout modes)
+
         
     def get_idname(self):
         return self.cam.name
@@ -289,7 +287,7 @@ if __name__ == '__main__':
         # camera.set_binning((2,2))
         # print('Binning is:',camera.get_binning())
         #     #ROI
-        # camera.set_roi(500,500,1000,1000)
+        camera.set_roi(500,500,1000,1000)
         print('ROI is:',camera.get_roi())
 
         # camera.setSubarrayV(500)
