@@ -48,17 +48,17 @@ class PVcamHW(HardwareComponent):
                                                       spinbox_step = 4, spinbox_decimals = 0, initial = 0, 
                                                       vmin = 0, vmax = 2196, reread_from_hardware_after_write = True,
                                                       description = "The default value 0 corresponds to the first pixel starting from the top/bottom")
+        self.readout = self.settings.New(name='readout', dtype=int, ro=False, 
+                                        choices = [0, 1, 2], initial = 0, 
+                                        reread_from_hardware_after_write = True)
         self.gain = self.settings.New(name='gain', initial=1, dtype=int,
-                                      vmax = 2, vmin = 1, spinbox_step = 1,
-                                      ro=False, unit='dB', reread_from_hardware_after_write=True)
-        #self.frame_rate = self.settings.New(name='frame_rate', initial= 5,
-        #                                    vmax = 1000., vmin = 0.01, spinbox_step = 0.1,
-        #                                    unit = 'fps', dtype=float, ro=False, reread_from_hardware_after_write=True)
-        #self.frame_num = self.settings.New(name='frame_num',initial= 10, spinbox_step = 1,
-        #                                   dtype=int, ro=False)
+                                      choices = [1, 2],
+                                      ro=False, reread_from_hardware_after_write=True)
+        #NOTE: maximum gain value 2 for readout modes 1 and 2. For readout mode 0 only gain value 1 is available.
         self.exposure_time = self.settings.New(name='exposure_time', initial=20, vmax =3600000,
                                                vmin = 0, spinbox_step = 0.01,dtype=int, ro=False, unit='ms',
                                                reread_from_hardware_after_write=True)
+        #NOTE: maximum exposure time of 3600000 ms is available only in long exposure mode (see readout port 1 or 2)
         self.acquisition_mode = self.settings.New(name='acquisition_mode', dtype=str,
                                                   choices=['Continuous', 'MultiFrame'], initial = 'Continuous', ro=False, reread_from_hardware_after_write = True)  #Uncomment to choose acquisition mode
         self.trmode = self.add_logged_quantity('trigger_mode', dtype=str, si=False, ro=0, 
@@ -78,6 +78,7 @@ class PVcamHW(HardwareComponent):
         self.exposure_time.hardware_read_func = self.cam.get_exposure
         #self.frame_rate.hardware_read_func = self.cam.get_rate
         self.gain.hardware_read_func = self.cam.get_gain
+        self.readout.hardware_read_func = self.cam.get_readout
         self.binning.hardware_read_func = self.cam.get_binning      
         self.trmode.hardware_read_func = self.cam.get_trigger_mode    
         self.subarrayh.hardware_read_func = self.cam.getSubarrayH
@@ -87,10 +88,9 @@ class PVcamHW(HardwareComponent):
         #self.roi.hardware_read_func = self.cam.get_roi
 
         self.exposure_time.hardware_set_func=self.cam.set_exposure
-        #self.frame_rate.hardware_set_func = self.cam.set_rate
-        #self.frame_num.hardware_set_func = self.cam.set_framenum
         self.binning.hardware_set_func = self.cam.set_binning
         self.gain.hardware_set_func = self.cam.set_gain
+        self.readout.hardware_set_func = self.cam.set_readout
         self.subarrayh.hardware_set_func = self.cam.setSubarrayH
         self.subarrayv.hardware_set_func = self.cam.setSubarrayV
         self.subarrayh_pos.hardware_set_func = self.cam.setSubarrayHpos

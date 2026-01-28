@@ -171,6 +171,9 @@ class PVcamDevice(object):
     def set_gain(self, desired_gain):
         self.cam.gain = desired_gain
 
+    def get_readout(self):
+        return self.cam.readout_port
+
     def set_readout(self, desired_readout):
          # When changing anything in speed table it is strongly recommended to set
         # all 3 properties (readout_port, speed, gain) in predefined order.
