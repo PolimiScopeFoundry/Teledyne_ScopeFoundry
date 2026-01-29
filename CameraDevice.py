@@ -38,9 +38,6 @@ class PVcamDevice(object):
         #readoutSpeed
         self.cam.roi = [0,0,3200,2200]
 
-    def get_properties(self,param_ID):
-        return self.cam.get_param(param_ID)
-
     def get_trigger_mode(self):
         mode = self.cam.exp_mode
         return(mode)
@@ -149,8 +146,8 @@ class PVcamDevice(object):
     def getSubarrayVpos(self):
         return self.cam.roi[1]  #y position of the ROI
 
-    def getParam(self, param_ID, attribute_ID):
-        return self.cam.get_param(param_ID, attribute_ID)
+    def getParam(self, param_ID):
+        return self.cam.get_param(param_ID)
 
     def get_exposure(self):
         return self.cam.exp_time 
@@ -257,12 +254,12 @@ if __name__ == '__main__':
         plt.figure()
         plt.imshow(image, cmap='gray')
         plt.show()
+        # print('Readout time [us] is:',camera.cam.get_param(const.PARAM_READOUT_TIME))
         print('Acquisition mode is:', camera.get_trigger_mode())
         print('Exposure time [ms] is:',camera.get_exposure())
         print('Temperature [°C] is:',camera.get_temperature())
         print('Binning is:',camera.get_binning())
         print('Gain is:',camera.get_gain())
-        #print('Sensor size is:',(camera.get_properties(const.PARAM_SER_SIZE),camera.get_properties(const.PARAM_PAR_SIZE)))
         print('Sensor size is (width, height):',(camera.get_width(),camera.get_height()))
 
         # #Acquisition multiple frames
@@ -301,13 +298,14 @@ if __name__ == '__main__':
         plt.figure()    
         plt.imshow(image, cmap='gray')
         plt.show()
+        # print('Readout time [us] is:',camera.cam.get_param(const.PARAM_READOUT_TIME))
 
         # #Reading parameters
-        # print('Camera info:',camera.getParam(const.PARAM_PRODUCT_NAME, const.ATTR_CURRENT))
-        # print('Parallel size:',camera.getParam(const.PARAM_PAR_SIZE, const.ATTR_CURRENT))
-        # print('Serial size:',camera.getParam(const.PARAM_SER_SIZE, const.ATTR_CURRENT))
-        print('Exposure mode:', camera.getParam
-              (const.PARAM_EXPOSURE_MODE, const.ATTR_CURRENT))
+        # print('Camera info:',camera.getParam(const.PARAM_PRODUCT_NAME)
+        # print('Parallel size:',camera.getParam(const.PARAM_PAR_SIZE)
+        # print('Serial size:',camera.getParam(const.PARAM_SER_SIZE)
+        # print('Exposure mode:', camera.getParam
+        #       (const.PARAM_EXPOSURE_MODE))
         #camera.setSubarrayH(10)
         #print('Roi horizontal:',camera.getSubarrayH())
     
